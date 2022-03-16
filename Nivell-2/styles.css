@@ -4,9 +4,13 @@
 }
 
 header, main, footer {
+    font-family: Helvetica, sans-serif;
     margin: 1rem;
+}
+
+main, footer {
     padding: 0.5rem;
-    background-color: #000000;
+    background-color: #D8D7D7;
 }
 
 .cabecera, .subtitulo, article, aside {
@@ -14,21 +18,26 @@ header, main, footer {
     padding: 0.5rem;
 }
 
-.cabecera > div, .subtitulo > div, .columna_content, .bottom_article, aside > div, footer > nav {
+.columna_content, .bottom_article, aside > div, footer > nav {
     margin: 0.5rem;
     padding: 0.6rem;
 }
 
 /*CABECERA*/
 
+header {
+    background-image: url(media/header.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
 .cabecera {
     display: flex;
     flex-direction: row;
-    background-color: #2E4058;
 }
 
-.cabecera > div {
-    background-color: #F15454;
+.logo {
+    max-width: 5vw;
 }
 
 .cabecera_side {
@@ -51,6 +60,16 @@ header, main, footer {
     flex: 4;
 }
 
+.cabecera_middle > button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
 .cabecera_middle > button > span {
     display: flex;
     align-items: center;
@@ -62,11 +81,23 @@ header, main, footer {
 }
 
 .subtitulo {
-    background-color: #F07B3F;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
 }
 
 .subtitulo > div {
-    background-color: #FED460;
+    margin-top: 5rem;
+    margin-bottom: 0px;
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    height: 4rem;
+    color: #f07a3fab;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 90%;
+    background-color: #00000025;
 }
 
 /*MAIN*/
@@ -108,7 +139,8 @@ aside > div {
 /*FOOTER*/
 
 footer > nav {
-    background-color: #E6AF2E;
+    text-align: center;
+    background-color: #F5F1F1;
 }
 
 @media only screen and (max-width: 768px) {
