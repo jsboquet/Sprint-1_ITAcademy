@@ -5,20 +5,10 @@
 
 header, main, footer {
     font-family: Helvetica, sans-serif;
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
-main, footer {
-    padding: 0.5rem;
-    background-color: #D8D7D7;
-}
-
-.cabecera, .subtitulo, article, aside {
-    margin: 0.8rem;
-    padding: 0.5rem;
-}
-
-.columna_content, .bottom_article, aside > div, footer > nav {
+.columna_content, .bottom_article, aside > div {
     margin: 0.5rem;
     padding: 0.6rem;
 }
@@ -26,7 +16,7 @@ main, footer {
 /*CABECERA*/
 
 header {
-    background-image: url(media/header.jpg);
+    background-image: url(media/header_xs.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -34,10 +24,21 @@ header {
 .cabecera {
     display: flex;
     flex-direction: row;
+    margin: 0.8rem;
+    padding: 0.5rem;
+    color: #7a7a7a;
 }
 
 .logo {
-    max-width: 5vw;
+    width: 5vw;
+    cursor: pointer;
+    filter: saturate(0%);
+    transition: 0.5s;
+}
+
+.logo:hover {
+    width: 6vw;
+    filter: saturate(100%);
 }
 
 .cabecera_side {
@@ -52,22 +53,28 @@ header {
 
 .social > svg {
     width: 1rem;
+    fill: #7a7a7a;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 .cabecera_middle {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex: 4;
 }
 
 .cabecera_middle > button {
+    height: 2.5rem;
     background: none;
     color: inherit;
-    border: none;
-    padding: 0;
+    border: 1px solid #ffffff00;
+    border-radius: 10px;
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    transition: 0.5s;
 }
 
 .cabecera_middle > button > span {
@@ -78,6 +85,16 @@ header {
 
 .cabecera_middle > button > span > svg {
     width: 1rem;
+    fill: #7a7a7a;
+}
+
+.social > svg:hover {
+    fill: #000000;
+}
+
+.cabecera_middle > button:hover {
+    border: 1px solid #7a7a7a;
+    background-color: #ffffff;
 }
 
 .subtitulo {
@@ -93,7 +110,7 @@ header {
     padding-top: 1rem;
     padding-bottom: 3rem;
     height: 4rem;
-    color: #f07a3fab;
+    color: #f88112a4;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     width: 90%;
@@ -108,8 +125,8 @@ main {
 }
 
 article {
-    flex: 2;
-    background-color: #4D4D69;
+    flex: 3;
+    background-color: #D8D7D7;
 }
 
 .columna_container {
@@ -118,8 +135,62 @@ article {
 }
 
 .columna_content {
+    margin: 0.5rem;
     flex: 1;
-    background-color: #1F6CB0;
+    background-color: #F5F1F1;
+}
+
+.portadaArticle {
+    height: 0;
+    overflow: hidden;
+    padding-top: calc(1 / 2 * 100%);
+    position: relative;
+}
+
+.portadaArticleSizing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.fotoArticle {
+    max-width: 100%;
+}
+
+.data_fotoArticle {
+    position: absolute;
+    left: 6px;
+    bottom: -13px;
+    z-index: 1;
+    color: rgb(255, 234, 117);
+}
+
+.seccioArticle {
+    margin-top: 0.3rem;
+    padding: 0.1rem 0rem 0rem 0.3rem;
+    color: #F5F1F1;
+    background-color: #F08080;
+}
+
+.textArticle {
+    column-width: 50%;
+}
+
+.textArticleContent {
+    color: #444444;
+    column-count: 2;
+}
+
+.textArticleLeerMas {
+    cursor: pointer;
+    color: #777777;
+}
+
+.textArticleLeerMas:hover {
+    color: #002fff;
+    text-decoration: underline;
 }
 
 .bottom_article {
@@ -129,7 +200,7 @@ article {
 aside {
     flex: 1;
     margin-left: 0.4rem;
-    background-color: #F73F52;
+    background-color: #D8D7D7;
 }
 
 aside > div {
@@ -138,7 +209,13 @@ aside > div {
 
 /*FOOTER*/
 
+footer {
+    padding: 0.5rem;
+    background-color: #D8D7D7;
+}
+
 footer > nav {
+    padding: 0.6rem;
     text-align: center;
     background-color: #F5F1F1;
 }
