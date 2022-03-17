@@ -22,6 +22,7 @@ header {
     padding: 0.5rem;
     color: #7a7a7a;
 }
+
 .cabecera_side {
     flex: 1;
 }
@@ -58,6 +59,11 @@ header {
     transition: 0.5s;
 }
 
+.cabecera_middle > button:hover {
+    border: 1px solid #7a7a7a;
+    background-color: #ffffff;
+}
+
 .cabecera_middle > button > span {
     display: flex;
     align-items: center;
@@ -67,11 +73,6 @@ header {
 .cabecera_middle > button > span > svg {
     height: 1rem;
     fill: #7a7a7a;
-}
-
-.cabecera_middle > button:hover {
-    border: 1px solid #7a7a7a;
-    background-color: #ffffff;
 }
 
 .social {
@@ -159,7 +160,6 @@ article {
     position: absolute;
     left: 6px;
     bottom: -13px;
-    z-index: 1;
     color: rgb(255, 234, 117);
 }
 
