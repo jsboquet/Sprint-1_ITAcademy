@@ -37,20 +37,56 @@ header, main, footer {
 /*CABECERA*/
 
 header {
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "logo navMenu social"
+      "titol titol titol";
     background-image: url(media/header_xs.jpg);
     background-position: center;
     background-size: cover;
 }
 
-.cabecera {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem;
-    color: #7a7a7a;
+.cabecera_side.logo {
+    grid-area: logo;
+    place-self: center;
 }
 
-.cabecera_side {
-    flex: 1;
+.cabecera_middle {
+    grid-area: navMenu;
+    place-self: center stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.cabecera_side.social {
+    grid-area: social;
+    place-self: center stretch;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.subtitulo {
+    grid-area: titol;
+    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    overflow: hidden;
+}
+
+.subtitulo > div {
+    width: 90%;
+    margin: 6rem auto 0rem auto;
+    padding: 0.5rem 0rem 3rem 0rem;
+    font-size: calc(20px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
+    color: #ca8504b7;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #00000025;
+    animation-name: movimentTitol;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
 }
 
 #logo {
@@ -69,14 +105,8 @@ header {
     filter: saturate(100%);
 }
 
-.cabecera_middle {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex: 4;
-}
-
 .cabecera_middle > button {
+    max-width: 90%;
     padding: 5px;
     background: none;
     color: inherit;
@@ -94,20 +124,14 @@ header {
 }
 
 .cabecera_middle > button > span {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    text-align: center;
 }
 
 .cabecera_middle > button > span > svg {
     height: 1rem;
+    padding-right: 5px;
+    margin-bottom: -2px;
     fill: #7a7a7a;
-}
-
-.social {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
 }
 
 .social > svg {
@@ -115,35 +139,11 @@ header {
     fill: #7a7a7a;
     cursor: pointer;
     transition: 0.5s;
+    place-self: center;
 }
 
 .social > svg:hover {
     fill: #000000;
-}
-
-.subtitulo {
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.subtitulo > div {
-    margin-top: 5rem;
-    margin-bottom: 0rem;
-    padding-top: 1rem;
-    padding-bottom: 3rem;
-    height: 4rem;
-    font-size: calc(20px + (26 - 20) * ((100vw - 300px) / (1600 - 300)));
-    color: #ca8504b7;
-    text-align: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    width: 90%;
-    background-color: #00000025;
-    animation-name: movimentTitol;
-    animation-duration: 4s;
-    animation-timing-function: ease-out;
 }
 
 /*MAIN*/
