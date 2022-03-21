@@ -149,50 +149,57 @@ header {
 /*MAIN*/
 
 main {
-    display: flex;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "article aside";
 }
 
 article {
-    flex: 3;
+    grid-area: article;
     background-color: #D8D7D7;
 }
 
 .columna_container {
-    display: flex;
-    flex-flow: row;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
 }
 
 .columna_content {
     margin: 0.5rem;
     padding: 0.6rem;
-    flex: 1;
     background-color: #F5F1F1;
 }
 
 .portadaArticle {
-    height: 0;
-    overflow: hidden;
-    padding-top: calc(1 / 2 * 100%);
     position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
 }
 
 .portadaArticleSizing {
-    position: absolute;
+    display: grid;
+    grid-template-areas: "portada";
+    position:  absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
 }
 
 .fotoArticle {
+    grid-area: portada;
     max-width: 100%;
 }
 
 .data_fotoArticle {
-    position: absolute;
-    left: 6px;
-    bottom: -13px;
+    grid-area: portada;
+    align-self: end;
+    padding-bottom: 8%;
+    padding-left: 2%;
     color: rgb(255, 234, 117);
 }
 
@@ -228,7 +235,7 @@ article {
 }
 
 aside {
-    flex: 1;
+    grid-area: aside;
     margin-left: 0.4rem;
     padding: 0.5rem;
     background-color: #D8D7D7;
@@ -249,8 +256,23 @@ footer > nav {
 }
 
 @media only screen and (max-width: 768px) {
+    .cabecera_middle > button > span {
+        font-size: small;
+    }
+
+    .cabecera_middle > button > span > svg {
+        padding: 3px;
+    }
+    
     main {
-        flex-flow: column;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+          "article"
+          "aside";
+    }
+
+    .textArticleContent {
+        column-count: 1;
     }
 
     aside {
@@ -258,30 +280,40 @@ footer > nav {
         margin-top: 0.4rem;
     }
 
-    .cabecera_middle > button > span {
-        flex-direction: column;
-        font-size: small;
-    }
-
-    .textArticleContent {
-        column-count: 1;
-    }
-
 }
 
 @media only screen and (max-width: 480px) {
-    .cabecera {
-        flex-direction: column;
-        align-items: center;
-        font-size: x-small;
-        gap: 10px;
+    header {
+        grid-template-columns: 100%;
+        grid-template-areas: 
+            "logo"
+            "navMenu" 
+            "social"
+            "titol";
+            gap: 10px;
     }
 
     .cabecera_middle {
-        width: 100%;
+        font-size: xx-small;
+    }
+
+    .cabecera_middle > button {
+        max-width: 100%;
+    }
+
+    .cabecera_side.social {
+        column-gap: 12px;
+    }
+
+    .cabecera_side.social > svg:first-child {
+        justify-self: end;
+    }
+
+    .cabecera_side.social > svg:last-child {
+        justify-self: start;
     }
 
     .columna_container {
-        flex-direction: column;
+        grid-template-columns: 100%;
     }
 }
